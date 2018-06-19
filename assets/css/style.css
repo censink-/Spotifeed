@@ -1,0 +1,283 @@
+/* COLORS */
+/* FONTS */
+/* VARIABLES */
+* {
+  box-sizing: border-box;
+  transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+body {
+  background: #1c1c1f;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Helvetica', sans-serif;
+  font-size: 14px;
+  color: #EEE;
+}
+#box {
+  transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  text-align: center;
+  width: 400px;
+  height: 300px;
+  padding: 40px;
+  margin: calc(50vh - 150px) auto 0;
+  border-radius: 12px;
+  background: #2A2A2C;
+  position: relative;
+}
+#box.big {
+  width: 470px;
+  height: 630px;
+  padding: 40px;
+  margin: calc(50vh - 315px) auto 0;
+  border-radius: 12px;
+  background: #2A2A2C;
+}
+#box.big hr.spacer {
+  margin: 20px 0;
+}
+#box #login-btn,
+#box #welcome-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: calc(100% - 80px);
+}
+#box #login-msg.hidden {
+  height: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+h1.normal,
+h2.normal,
+h3.normal,
+h4.normal,
+h5.normal,
+h6.normal {
+  text-transform: Capitalize;
+}
+.hidden {
+  opacity: 0;
+}
+hr.spacer {
+  margin: 15px 0;
+  border-color: #333336;
+  opacity: 0;
+}
+a {
+  color: #EEE;
+}
+a:hover {
+  color: #FFF;
+}
+a.btn {
+  border-radius: 40px;
+  box-shadow: 0 0 0 2px #EEE inset;
+  color: #EEE;
+  transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  display: inline-block;
+  line-height: 1;
+  min-width: 100px;
+  padding: 18px 48px 16px;
+  margin: 0 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+a.btn.btn-wide {
+  min-width: 300px;
+  margin: 0 15px;
+}
+a.btn.btn-block {
+  width: 100%;
+  margin: 0;
+}
+a.btn:hover {
+  background: #EEE;
+  color: #222326;
+  transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+}
+a.btn.btn-black {
+  background: #000000;
+  box-shadow: 0 0 0 2px #000000 inset;
+  color: #EEE;
+}
+a.btn.btn-green {
+  background: #1DB954;
+  box-shadow: none;
+  color: #EEE;
+}
+a.btn.btn-green:hover {
+  background: #1ed760;
+}
+.step {
+  width: 100%;
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+  text-align: left;
+  margin-bottom: 15px;
+}
+.step .step-icon {
+  display: inline-block;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  z-index: 0;
+  text-align: center;
+  margin-right: 20px;
+  font-size: 16px;
+}
+.step .step-icon:before {
+  display: block;
+  content: '';
+  border-radius: 50%;
+  background: #888888;
+  /* Old browsers */
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  animation: step-active 1s infinite linear;
+  z-index: -1;
+}
+.step .step-icon:after {
+  display: block;
+  content: '';
+  border-radius: 50%;
+  background: #2A2A2C;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  line-height: 40px;
+  z-index: -1;
+}
+.step.pending .step-icon {
+  color: #888888;
+}
+.step.pending .step-icon:before {
+  background: #888888;
+}
+.step.pending .step-description {
+  color: #888888;
+}
+.step.active .step-icon:before {
+  background: #ff9900;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ff1c1c 6%, #a056d8 31%, #54bad3 69%, #57db59 90%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ff1c1c 6%, #a056d8 31%, #54bad3 69%, #57db59 90%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ff1c1c 6%, #a056d8 31%, #54bad3 69%, #57db59 90%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.step.active .step-description {
+  font-size: 16px;
+}
+.step.completed .step-icon:before {
+  background: #1DB954;
+}
+.step.completed .step-description {
+  color: #1DB954;
+}
+.step.failed .step-icon {
+  color: red;
+}
+.step.failed .step-icon:before {
+  background: red;
+}
+.step.failed .step-description {
+  color: red;
+}
+.step.has-result .step-description {
+  top: 10%;
+}
+.step.has-result .step-result {
+  left: 64px;
+  opacity: 1;
+}
+.step .step-description {
+  display: inline-block;
+  position: absolute;
+  line-height: 14px;
+  height: 0;
+  margin: 0;
+  top: 33%;
+}
+.step .step-result {
+  position: absolute;
+  line-height: 12px;
+  height: 0;
+  margin: 0;
+  left: 104px;
+  bottom: 43%;
+  color: #888888;
+  opacity: 0;
+}
+#privacy {
+  font-size: 10px;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+ul {
+  padding-left: 0;
+}
+ul li {
+  margin-bottom: 20px;
+  list-style: none;
+}
+@keyframes step-active {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 501px) {
+  body {
+    font-size: 12px;
+  }
+  body #box.big {
+    width: 400px;
+    height: 620px;
+    padding: 40px;
+    margin: calc(50vh - 310px) auto 0;
+    border-radius: 12px;
+    background: #2A2A2C;
+    padding: 20px;
+  }
+  body #box.big .step {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-height: 501px) {
+  #box.big {
+    top: 150px;
+  }
+}
